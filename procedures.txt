@@ -1,0 +1,7 @@
+1º Create env.
+2º Create project.
+3º Create requirements.txt and procedures.txt
+4º Create settings folder with base - local - prod confs. // Don't forget to add __init__.py
+5º Move the settings.py info to each of these files and do not forget to import base.py from each.
+6º Configure the project to use these new files as default settings:
+    $ python3 manage.py runserver --settings=employees.settings.local
