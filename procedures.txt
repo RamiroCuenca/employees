@@ -1,4 +1,6 @@
-1º Create env.
+1º Create and open env.
+    Linux --> $ source employees_env/bin/activate
+    Windows --> $ .\employee_env\scripts\activate
 2º Create project.
 3º Create requirements.txt and procedures.txt
 4º Create settings folder with base - local - prod confs. // Don't forget to add __init__.py
