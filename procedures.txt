@@ -15,4 +15,5 @@
     $ django-admin startapp name
 9º Add these apps to base.py (Settings of the project).
 10º Add urls.py to both apps (so to be more tidy) // Import "re_path" and "include" at project urls.py.
-11º Create "templates" in each app.
+11º Create "templates" folder with subfolders for each app and modify settings so as to recognize it. 
+// Chance "BASE_DIR" var and "TEMPLATES[DIRS:]"
