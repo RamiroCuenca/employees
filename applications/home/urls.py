@@ -7,4 +7,5 @@ from . import views
 urlpatterns = [
     #path('admin/', admin.site.urls),
     path('test/', views.TestView.as_view()),
+    path('list/', views.TestListView.as_view())
 ]

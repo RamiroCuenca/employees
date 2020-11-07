@@ -17,3 +17,9 @@
 10º Add urls.py to both apps (so to be more tidy) // Import "re_path" and "include" at project urls.py.
 11º Create "templates" folder with subfolders for each app and modify settings so as to recognize it. 
 // Chance "BASE_DIR" var and "TEMPLATES[DIRS:]"
+12º Create models and deploy them at the db.
+    $ python3 manage.py makemigrations
+    $ python3 manage.py migrate
+
+Extras:
+> Djaneiro extension.

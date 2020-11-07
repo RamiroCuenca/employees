@@ -14,3 +14,10 @@ view with a html file located always in "templates" folder
 '''
 class TestView(TemplateView):
     template_name = 'home/test.html' # Remember to create the template
+
+
+class TestListView(ListView):
+    template_name = "home/list.html"
+    context_object_name = 'listOfNumbers' # Like a var declaration, we refere to it at the HTML as the queryset
+    # model = Test # Model from DB 
+    queryset = ['0', '10', '20', '30', '40', '50']
