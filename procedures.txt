@@ -2,8 +2,15 @@
     Linux --> $ source employees_env/bin/activate
     Windows --> $ .\employee_env\scripts\activate
 2º Create project.
+    $ django-admin startproject name
 3º Create requirements.txt and procedures.txt
 4º Create settings folder with base - local - prod confs. // Don't forget to add __init__.py
 5º Move the settings.py info to each of these files and do not forget to import base.py from each.
-6º Configure the project to use these new files as default settings:
+6º In order to use these new settings, we can specify django to use them each time we runserver:
     $ python3 manage.py runserver --settings=employees.settings.local
+   Or we can set manage.py to use these new files as default settings.
+   Warning! Do not forget to set it to "prod" if we make the deployment.
+7º Create applications folder. // Do not forget to add the __init__.py file.
+8º Create app (In applications dir). // departments and staff in this case.
+    $ django-admin startapp name
+9º Add these apps to base.py (Settings of the project).
