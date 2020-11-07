@@ -11,7 +11,8 @@
    Or we can set manage.py to use these new files as default settings.
    Warning! Do not forget to set it to "prod" if we make the deployment.
 7º Create applications folder. // Do not forget to add the __init__.py file.
-8º Create app (In applications dir). // departments and staff in this case.
+8º Create app (In applications dir). // home, departments and staff in this case.
     $ django-admin startapp name
 9º Add these apps to base.py (Settings of the project).
 10º Add urls.py to both apps (so to be more tidy) // Import "re_path" and "include" at project urls.py.
+11º Create "templates" in each app.
