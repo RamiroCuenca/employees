@@ -1,7 +1,14 @@
 from django.shortcuts import render
 
 # Generic views from Django
-from django.views.generic import TemplateView, ListView
+from django.views.generic import (
+    TemplateView,
+    ListView,
+    CreateView,
+)
+
+# Import models
+from .models import Test
 
 '''
 Django works with class based views
@@ -21,3 +28,9 @@ class TestListView(ListView):
     context_object_name = 'listOfNumbers' # Like a var declaration, we refere to it at the HTML as the queryset
     # model = Test # Model from DB 
     queryset = ['0', '10', '20', '30', '40', '50']
+
+
+class TestList(ListView):
+    template_name = 'home/test_list.html'
+    context_object_name = 'testList'
+    model = Test
