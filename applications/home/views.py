@@ -34,3 +34,9 @@ class TestList(ListView):
     template_name = 'home/test_list.html'
     context_object_name = 'testList'
     model = Test
+
+
+class TestCreateView(CreateView):
+    template_name = 'home/test_create.html'
+    model = Test
+    fields = ['title', 'subtitle', 'amount']
