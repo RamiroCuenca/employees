@@ -9,6 +9,7 @@ filelock==3.0.12
 isort==4.3.21
 lazy-object-proxy==1.4.3
 mccabe==0.6.1
+Pillow==8.0.1 # Allow as to process images with postgres
 pipenv==2020.8.13
 psycopg2==2.8.6 # Adapter from Python to PSQL
 pylint==2.4.4
