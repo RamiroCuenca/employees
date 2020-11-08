@@ -22,8 +22,21 @@
     $ python3 manage.py migrate
     https://docs.djangoproject.com/en/3.1/ref/models/fields/
 13º Import and register the created class to the admin file of the app.
+    $ admin.site.register(model_name) // Do not forget to import it before quoting it.
 14º Create superuser in order to be able to enter de admin site.
     $ python3 manage.py createsuperuser
-
+15º Download PostgreSQL from it's official site.
+    https://www.enterprisedb.com/downloads/postgres-postgresql-downloads
+    Set password: Ragnarok2020!
+    Set Port: 3306
+    Set password for pgAdmin: Ragnarok1109!
+16º Create employeeDB from pgShell.
+    1- LogIn: localhost - postgres - 3306 - postgres - Ragnarok2020!
+    $ CREATE DATABASE employees_db;
+    $ CREATE USER ramiro;
+    $ \c employees_db;   // Enter DB
+    $ ALTER ROLE ramiro WITH PASSWORD 'Ragnarok2020!';  // Allow 'ramiro' user to enter the DB. 
+17º Set PostgreSQL DB as default for the project.
+    Download 'psycopg2'... an adapter from python to PSQL.
 Extras:
 > Djaneiro extension.

@@ -20,3 +20,6 @@ class Staff(models.Model):
     job = models.CharField('Job', max_length = 1, choices = JOB_CHOICES)
     department = models.ForeignKey(Department, on_delete=models.CASCADE)
     #image = models.ImageField(, upload_to=None, height_field=None, width_field=None, max_length=None)
+
+    def __str__(self):
+        return self.first_name + ' ' + self.last_name + ' - ' + self.job  
