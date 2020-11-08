@@ -20,6 +20,7 @@
 12º Create models and deploy them at the db.
     $ python3 manage.py makemigrations
     $ python3 manage.py migrate
+    https://docs.djangoproject.com/en/3.1/ref/models/fields/
 13º Import and register the created class to the admin file of the app.
 14º Create superuser in order to be able to enter de admin site.
     $ python3 manage.py createsuperuser
