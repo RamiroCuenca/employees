@@ -21,5 +21,13 @@ class Staff(models.Model):
     department = models.ForeignKey(Department, on_delete=models.CASCADE)
     #image = models.ImageField(, upload_to=None, height_field=None, width_field=None, max_length=None)
 
+
+    class Meta:
+        verbose_name = 'Worker'
+        verbose_name_plural = 'Staff'
+        ordering = ['job']
+        unique_together = ('firs_name', 'last_name')
+
+
     def __str__(self):
         return self.first_name + ' ' + self.last_name + ' - ' + self.job  
