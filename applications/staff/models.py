@@ -2,6 +2,19 @@ from django.db import models
 
 from applications.departments.models import Department
 
+
+class Skills(models.Model):
+    ''' Skills each worker have '''
+    skill = models.CharField('Skill', max_length=50)
+
+    class Meta:
+        verbose_name = 'Skill'
+        verbose_name_plural = 'Skills'
+
+    def __str__(self):
+        return str(self.id) + ' - ' + self.skill
+
+
 class Staff(models.Model):
     ''' Model for employees table '''
 
@@ -26,7 +39,7 @@ class Staff(models.Model):
         verbose_name = 'Worker'
         verbose_name_plural = 'Staff'
         ordering = ['job']
-        unique_together = ('firs_name', 'last_name')
+        unique_together = ('first_name', 'last_name')
 
 
     def __str__(self):
