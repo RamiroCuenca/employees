@@ -32,8 +32,8 @@ class Staff(models.Model):
     last_name = models.CharField('Last Name', max_length = 50)
     job = models.CharField('Job', max_length = 1, choices = JOB_CHOICES)
     department = models.ForeignKey(Department, on_delete=models.CASCADE)
-    #image = models.ImageField(, upload_to=None, height_field=None, width_field=None, max_length=None)
-
+    avatar = models.ImageField(upload_to='staff', blank = True, null = True, height_field=None, width_field=None, max_length=None)
+    skills = models.ManyToManyField(Skills)
 
     class Meta:
         verbose_name = 'Worker'
