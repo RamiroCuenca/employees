@@ -1,7 +1,7 @@
 from django.db import models
 
 class Department(models.Model):
-    name = models.CharField('Name', max_length=50, editable = False)
+    name = models.CharField('Name', max_length=50, editable = True)
     tag = models.CharField('Tag', max_length=15, blank = True, unique = True)
     is_active = models.BooleanField('Is Active', default = True)
 
