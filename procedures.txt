@@ -25,11 +25,26 @@
     $ admin.site.register(model_name) // Do not forget to import it before quoting it.
 14º Create superuser in order to be able to enter de admin site.
     $ python3 manage.py createsuperuser
-15º Download PostgreSQL from it's official site.
-    https://www.enterprisedb.com/downloads/postgres-postgresql-downloads
-    Set password: Ragnarok2020!
-    Set Port: 3306
-    Set password for pgAdmin: Ragnarok1109!
+15º Download PostgreSQL:
+    Windows:
+        From it's official site.
+        https://www.enterprisedb.com/downloads/postgres-postgresql-downloads
+        Set password: Ragnarok2020!
+        Set Port: 3306
+        Set password for pgAdmin: Ragnarok1109!
+    Linux:
+        Check:
+            https://www.postgresql.org/download/linux/ubuntu/
+            https://www.youtube.com/watch?v=40uGNsi7ysc&ab_channel=FaztCode
+            https://www.pgadmin.org/download/pgadmin-4-apt/
+        Installation
+            $ sudo apt-get install postgresql postgresql-contrib pgAdmin
+        Enter DBGS
+            $ sudo -u postgres psql
+        List DBs ('q' for quit)
+            $ \l 
+        Leave DBGS
+            $ \q
 16º Create employeeDB from pgShell.
     1- LogIn: localhost - postgres - 3306 - postgres - Ragnarok2020!
     $ CREATE DATABASE employees_db;
