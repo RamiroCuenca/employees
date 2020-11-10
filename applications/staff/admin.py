@@ -11,6 +11,7 @@ class StaffAdmin(admin.ModelAdmin):
         'first_name',
         'last_name',
         'job',
+        'description',
         'department_tag',
         'avatar',
         'full_name', # It does not exist, we may create it with a funcion
