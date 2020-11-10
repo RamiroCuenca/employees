@@ -33,6 +33,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    # Third Parties Apps
+    'ckeditor',
+
     # Local Apps
     'applications.departments',
     'applications.staff',

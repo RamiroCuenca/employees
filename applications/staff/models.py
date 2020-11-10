@@ -2,6 +2,7 @@ from django.db import models
 
 from applications.departments.models import Department
 
+from ckeditor.fields import RichTextField
 
 class Skills(models.Model):
     ''' Skills each worker have '''
@@ -34,6 +35,8 @@ class Staff(models.Model):
     department = models.ForeignKey(Department, on_delete=models.CASCADE)
     avatar = models.ImageField(upload_to='staff', blank = True, null = True, height_field=None, width_field=None, max_length=None)
     skills = models.ManyToManyField(Skills)
+    description = RichTextField()
+
 
     class Meta:
         verbose_name = 'Worker'

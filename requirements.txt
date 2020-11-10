@@ -5,6 +5,8 @@ certifi==2020.6.20
 colorama==0.4.3
 distlib==0.3.1
 Django==3.1
+django-ckeditor==6.0.0 # Adds features to 'admin' site
+django-js-asset==1.2.2 # No idea
 filelock==3.0.12
 isort==4.3.21
 lazy-object-proxy==1.4.3

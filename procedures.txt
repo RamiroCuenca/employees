@@ -47,11 +47,23 @@
             $ \q
 16º Create employeeDB from pgShell.
     1- LogIn: localhost - postgres - 3306 - postgres - Ragnarok2020!
-    $ CREATE DATABASE employees_db;
-    $ CREATE USER ramiro;
-    $ \c employees_db;   // Enter DB
-    $ ALTER ROLE ramiro WITH PASSWORD 'Ragnarok2020!';  // Allow 'ramiro' user to enter the DB. 
+        $ CREATE DATABASE employees_db;
+        $ CREATE USER ramiro;
+        $ \c employees_db;   // Enter DB
+        $ ALTER ROLE ramiro WITH PASSWORD 'Ragnarok2020!';  // Allow 'ramiro' user to enter the DB. 
 17º Set PostgreSQL DB as default for the project.
     Download 'psycopg2'... an adapter from python to PSQL.
+18º Download django-CKEditor in order to help us writing posts from 'admin'.
+    https://pypi.org/project/django-ckeditor/
+    1º Download it.
+        $ pip install django-ckeditor
+    2º Add it to settings as a 'third parties app' as 'ckeditor'.
+    3º Run the 'collectstatic' management command:
+        $ ./manage.py collectstatic
+    4º
+    // Do not forget to add it to requirements.txt.
+19º In order to use 'CKEditor', we must:
+    1º from ckeditor.fields import RichTextField
+    2º create a field with 'RichTextField' in any model. 
 Extras:
 > Djaneiro extension.
