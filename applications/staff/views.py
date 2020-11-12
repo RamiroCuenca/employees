@@ -45,3 +45,20 @@ class ListEmployeesArea(ListView):
         )
         # Quiet with the fact that it it does not return a list (1 object) it cause an error!
         return listArea # Returns a list
+
+
+class ListEmployeesJob(ListView):
+    ''' List employees by job they do '''
+    template_name = 'staff/list_employees_job.html'
+    context_object_name = 'listEmpJob'
+
+    def get_queryset(self):
+        # Catch the job through the url
+        job_task = self.kwargs['task']
+        # Make the filter
+        listJob = Staff.objects.filter(
+            job = job_task
+            )
+        return listJob
+    
+
