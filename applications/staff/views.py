@@ -4,6 +4,7 @@ from django.views.generic import (
 #    TemplateView,
     ListView,
 #    CreateView,
+    DetailView,
 )
 
 # Models
@@ -108,5 +109,18 @@ class ListEmployeesSkills(ListView):
         #worker = Staff.objects.get(first_name = kw_name)
         
         return worker.skills.all()
+
+class EmployeeDetailView(DetailView):
+    ''' Detail view for one employee '''
+    template_name = 'staff/detail_employee.html'
+    model = Staff
+    # We do not have to add context_object_name
+    # by default we can access it from the html as "object"
+    # or with the name of the model but without mayus, fe "staff"
+
+    def get_context_data(self, **kwargs):
+        context = super(EmployeeDetailView, self).get_context_data(**kwargs)
+        context["tittle"] = 'Employee of the Month' 
+        return context
     
 
