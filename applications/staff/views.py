@@ -3,7 +3,7 @@ from django.shortcuts import render
 from django.views.generic import (
 #    TemplateView,
     ListView,
-#    CreateView,
+    CreateView,
     DetailView,
 )
 
@@ -110,6 +110,7 @@ class ListEmployeesSkills(ListView):
         
         return worker.skills.all()
 
+
 class EmployeeDetailView(DetailView):
     ''' Detail view for one employee '''
     template_name = 'staff/detail_employee.html'
@@ -124,3 +125,16 @@ class EmployeeDetailView(DetailView):
         return context
     
 
+
+class CreateEmployee(CreateView):
+    model = Staff
+    template_name = "staff/add_employee.html"
+    
+    # It also needs to know witch attributes we would like to input
+    # Also, we can specify each field or use the special attribute "__all__"
+    #fields = ['first_name', 'last_name', 'job', 'department', 'avatar', 'description',]
+    fields = ('__all__')
+
+    # Also, it does not need a context_object_name, by default we can used it as "form"
+
+    # Watch the HTML and see that it has a lot of methods!
