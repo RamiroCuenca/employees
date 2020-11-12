@@ -3,8 +3,10 @@ from django.urls import path, re_path
 
 from .views import (
     ListAllEmployees, ListEmployeesArea, ListEmployeesJob, ListEmployeesKeyWork,
-    ListEmployeesSkills, EmployeeDetailView, CreateEmployee,
+    ListEmployeesSkills, EmployeeDetailView, CreateEmployee, SuccessCreateEmployee,
 )
+
+app_name = "staff_app" # Used in 'reverse_lazy()' to refere to this file
 
 urlpatterns = [
     #path('admin/', admin.site.urls),
@@ -15,4 +17,5 @@ urlpatterns = [
     path('list_skills/', ListEmployeesSkills.as_view()),
     path('detail_employee/<pk>/', EmployeeDetailView.as_view()), # By default it accepts pk arg
     path('create_employee/', CreateEmployee.as_view()),
+    path('success_add/', SuccessCreateEmployee.as_view(), name='success'),
 ]

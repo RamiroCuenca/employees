@@ -1,11 +1,13 @@
 from django.shortcuts import render
 
 from django.views.generic import (
-#    TemplateView,
+    TemplateView,
     ListView,
     CreateView,
     DetailView,
 )
+
+from django.urls import reverse_lazy 
 
 # Models
 from .models import Staff
@@ -138,3 +140,15 @@ class CreateEmployee(CreateView):
     # Also, it does not need a context_object_name, by default we can used it as "form"
 
     # Watch the HTML and see that it has a lot of methods!
+
+    # Also it needs an atributte wich specifies the URL where it gonna send us after submitting the form!
+    #success_url = '.' # A dot means the same URL
+    #success_url = '/success_add'
+    success_url = reverse_lazy('staff_app:success')
+
+    '''def get_absolute_url(self):
+        return '/success_add'
+    '''
+class SuccessCreateEmployee(TemplateView):
+    ''' View to notify or inform the user that the creation of the record was a succes '''
+    template_name = 'staff/succes_view.html'
