@@ -31,7 +31,7 @@ class StaffAdmin(admin.ModelAdmin):
         return full_name
     #
     search_fields = ('first_name',) # Determines based on which attribute the records will be sorted
-    list_filter = ('job', 'skills',) # Determines based on which attribute the records will be filtered
+    list_filter = ('job', 'skills', 'department',) # Determines based on which attribute the records will be filtered
     #
     filter_horizontal = ('skills',)
 
