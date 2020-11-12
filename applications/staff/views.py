@@ -62,3 +62,21 @@ class ListEmployeesJob(ListView):
         return listJob
     
 
+class ListEmployeesKeyWork(ListView):
+    ''' List employees by key word '''
+    template_name = 'staff/list_keyword.html'
+    context_object_name = 'workers'
+
+    def get_queryset(self):
+        print('#' * 15)
+        kw = self.request.GET.get('kword', '',)
+        print('=' * 10, kw)
+
+        list_kw = Staff.objects.filter(
+            first_name = kw
+        )
+
+        print('Results: ', list_kw)
+        return list_kw
+    
+
