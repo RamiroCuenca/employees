@@ -1,10 +1,9 @@
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, re_path
 
-def hi_staff(self):
-    print('STAFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF')
+from .views import ListAllEmployees
 
 urlpatterns = [
     #path('admin/', admin.site.urls),
-    path('stafff/', hi_staff)
+    path('list_employees/', ListAllEmployees.as_view()),
 ]

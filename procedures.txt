@@ -67,3 +67,4 @@
     2º create a field with 'RichTextField' in any model. 
 Extras:
 > Djaneiro extension.
+> Django Classed Views Source : https://ccbv.co.uk/
