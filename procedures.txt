@@ -68,3 +68,4 @@
 Extras:
 > Djaneiro extension.
 > Django Classed Views Source : https://ccbv.co.uk/
+> Django Infinite Scroll : https://dev.to/coderasha/infinite-scroll-with-django-d0a

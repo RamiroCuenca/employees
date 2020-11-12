@@ -16,6 +16,16 @@ class ListAllEmployees(ListView):
     context_object_name = 'listOfEmployees' # The name as we will refere to this at the HTML
     # We can exclude the "context_object_name" and refered to this obj as "object_list" (as default)
 
+    # Usually, if we ask to the DB for more than 20 or 30 results, it will be a really heave query
+    # So, using pagination it is helpfull !!
+    paginate_by = 4
+    # We can manually move forward through the pages
+    # http://localhost:8000/list_employees/?page=1 
+
+    # We can also order the elements by them attributes
+    ordering = 'id'
+
+
 class ListEmployeesArea(ListView):
     ''' List of employees which belong to x area '''
     template_name = 'staff/list_employees_area.html'
@@ -78,5 +88,25 @@ class ListEmployeesKeyWork(ListView):
 
         print('Results: ', list_kw)
         return list_kw
+    
+
+class ListEmployeesSkills(ListView):
+    ''' List employees by their skills '''
+    template_name = 'staff/list_skills.html'
+    context_object_name = 'skills'
+
+    def get_queryset(self):
+        #worker = Staff.objects.get(id=4)
+        
+        # First we need to catch the kw from the button and input
+        kw_name = self.request.GET.get('name')
+
+        # Get the worker whose name matchs
+        worker = Staff.objects.get(first_name=kw_name)
+
+        # Filter through the results
+        #worker = Staff.objects.get(first_name = kw_name)
+        
+        return worker.skills.all()
     
 
